@@ -1,0 +1,25 @@
+export type Project = {
+  businessUnit: string | null;
+  coin?: "Kwanza" | "Euro" | "Usd" | null;
+  comune: string | null;
+  contributor: string | null;
+  createdAt: Date;
+  endDate: Date | null;
+  executeValue: string | null;
+  expectedResults: string | null;
+  Financing: string | null;
+  healthArea: string | null;
+  id: string;
+  municipality: string | null;
+  objectives: string | null;
+  owner: string | null;
+  projectValue: string | null;
+  province: string | null;
+  scope: string | null;
+  startDate: Date | null;
+  status?: "Option1" | null;
+  targetAchieved: string | null;
+  targetGroup: string | null;
+  targetPopulation: string | null;
+  updatedAt: Date;
+};

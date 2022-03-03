@@ -1,0 +1,22 @@
+export type ProjectUpdateInput = {
+  businessUnit?: string | null;
+  coin?: "Kwanza" | "Euro" | "Usd" | null;
+  comune?: string | null;
+  contributor?: string | null;
+  endDate?: Date | null;
+  executeValue?: string | null;
+  expectedResults?: string | null;
+  Financing?: string | null;
+  healthArea?: string | null;
+  municipality?: string | null;
+  objectives?: string | null;
+  owner?: string | null;
+  projectValue?: string | null;
+  province?: string | null;
+  scope?: string | null;
+  startDate?: Date | null;
+  status?: "Option1" | null;
+  targetAchieved?: string | null;
+  targetGroup?: string | null;
+  targetPopulation?: string | null;
+};

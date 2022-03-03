@@ -1,0 +1,19 @@
+{
+  "dataServiceGeneratorVersion": "0.11.4",
+  "appInfo": {
+    "name": "GePoS",
+    "description": "GePoS - Gestão de Programas de Saúde - uma poderosa plataforma para o Planeamento, Monitorização e Avaliação da implementação de Programas e Projectos  de Saúde",
+    "version": "ppwml2rs",
+    "id": "cl02qh81n20027201s6klwe65v9",
+    "url": "https://app.amplication.com/cl02qh81n20027201s6klwe65v9",
+    "settings": {
+      "dbHost": "localhost",
+      "dbName": "",
+      "dbPassword": "admin",
+      "dbPort": 5432,
+      "dbUser": "admin",
+      "appId": "cl02qh81n20027201s6klwe65v9",
+      "authProvider": "Jwt"
+    }
+  }
+}
