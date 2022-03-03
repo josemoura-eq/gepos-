@@ -1,0 +1,106 @@
+datasource postgres {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  contractDuration String?
+  contractType     String?
+  createdAt        DateTime @default(now())
+  firstName        String?
+  id               String   @id @default(cuid())
+  institution      String?
+  job              String?
+  lastName         String?
+  password         String
+  projects         String?
+  roles            String[]
+  updatedAt        DateTime @updatedAt
+  username         String   @unique
+}
+
+model Project {
+  businessUnit     String?
+  coin             EnumProjectCoin?
+  comune           String?
+  contributor      String?
+  createdAt        DateTime           @default(now())
+  endDate          DateTime?
+  executeValue     String?
+  expectedResults  String?
+  Financing        String?
+  healthArea       String?
+  id               String             @id @default(cuid())
+  municipality     String?
+  objectives       String?
+  owner            String?
+  projectValue     String?
+  province         String?
+  scope            String?
+  startDate        DateTime?
+  status           EnumProjectStatus?
+  targetAchieved   String?
+  targetGroup      String?
+  targetPopulation String?
+  updatedAt        DateTime           @updatedAt
+}
+
+model HealthArea {
+  contributors Contributor[]
+  createdAt    DateTime      @default(now())
+  healthfield  String?
+  id           String        @id @default(cuid())
+  mainAreas    String?
+  updatedAt    DateTime      @updatedAt
+}
+
+model Objective {
+  actualStatus   EnumObjectiveActualStatus?
+  contributor    Contributor[]
+  createdAt      DateTime                     @default(now())
+  expectedStatus EnumObjectiveExpectedStatus?
+  id             String                       @id @default(cuid())
+  objective      Objective?                   @relation(name: "ObjectiveOnObjectives", fields: [objectiveId], references: [id])
+  objectiveId    String?
+  objectives     Objective[]                  @relation(name: "ObjectiveOnObjectives")
+  timeframe      String?
+  unit           String?
+  updatedAt      DateTime                     @updatedAt
+}
+
+model Contributor {
+  comune               String?
+  contributorName      String?
+  countryOfOrigin      String?
+  createdAt            DateTime     @default(now())
+  heathArea            HealthArea[]
+  id                   String       @id @default(cuid())
+  municipality         String?
+  numberOfColaborators String?
+  objectives           Objective[]
+  organizationType     String?
+  province             String?
+  updatedAt            DateTime     @updatedAt
+}
+
+enum EnumProjectCoin {
+  Kwanza
+  Euro
+  Usd
+}
+
+enum EnumProjectStatus {
+  Option1
+}
+
+enum EnumObjectiveActualStatus {
+  Option1
+}
+
+enum EnumObjectiveExpectedStatus {
+  Option1
+}
